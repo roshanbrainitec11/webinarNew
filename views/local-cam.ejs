@@ -1,0 +1,159 @@
+<div class="webcamWrap" ng-controller="LocalStreamController as localStream">
+	<h1 class="text-center"> [Presenter] Webinar
+		<div class="startName">
+			<input type="text" ng-model="localStream.name" />
+			<button class="btncopy" ng-click="localStream.toggleCam()">Start</button>
+			<div class="clearfix"></div>
+		</div>
+	</h1>
+
+	<div class="onlineStatus" ng-hide="localStream.cameraIsOn">
+		<span class="span-dot"></span>
+		<span class="span-1"> Camera is Ready! </span>
+		<span class="span-2">Press
+			<b>Start</b>Button To Broadcast.</span>
+		<div class="clearfix"></div>
+	</div>
+	<div class="onlineStatus" ng-show="localStream.cameraIsOn">
+		<span class="span-dot active"></span>
+		<span class="span-1">On Air! </span>
+		<span class="span-2">You are on Air.</span>
+		<div class="clearfix"></div>
+	</div>
+	<div class="videoWrap">
+		<div class="left">
+			<div class="img-1" ng-controller="LocalStreamController as localStream">
+				<video id="localVideo" muted="muted" autoplay="true"></video>
+				<div ng-show="localStream.cameraIsOn">
+					<a>https://{{ localStream.link }}</a>
+				</div>
+				<button class="btncall" ng-click="localStream.toggleCam()" ng-hide="localStream.cameraIsOn">
+					<i class="fa fa-video-camera"></i>
+				</button>
+				<a class="video-leftArrow">
+					<img src="../images/right.png" />
+				</a>
+				<div id="leftScreenButton" class="leftScreenButton">
+					<p>Mode - Camera/Mic</p>
+					<div class="box-check">
+						<label class="camcheck">Use Camera
+							<input type="checkbox" checked="checked">
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<div class="box-check">
+						<label class="camcheck">Use Mic
+							<input type="checkbox" checked="checked">
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<div class="box-check last">Start Cam/Mic</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="img-2" ng-controller="RemoteStreamsController as rtc">
+				<div id="remoteVideosContainer"></div>
+				<button class="btncall">
+					<i class="fa fa-video-camera"></i>
+				</button>
+				<a class="video-leftArrow-1">
+					<img src="../images/left.png" />
+				</a>
+				<div id="rightPanel" class="leftScreenButton rightPanel">
+					<p>Mode - Webcam Screen</p>
+					<div class="box-check last">Start Screen</div>
+					<div class="box-check last">Start Screen</div>
+					<table>
+						<thead>
+							<tr>
+								<th>Live User</th>
+								<th>User </th>
+								<th>Options</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="stream in rtc.remoteStreams" ng-class="{'selected' : stream.isPlaying}">
+								<td>
+									<a>{{stream.name}}</a>
+								</td>
+								<td ng-click="rtc.view(stream)">
+									<a>View</a>
+								</td>
+								<td ng-click="rtc.call(stream)">
+									<a>Call</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="clearfix"></div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="leftViewer" ng-controller="RemoteStreamsController as rtc">
+				<div class="one">
+					<i class="fa fa-eye"></i> Viewer(s):
+					<span>{{rtc.remoteStreams.length}} </span>
+				</div> |
+				<div class="one">
+					<i class="fa fa-user"></i> Presenter(s):
+					<span> {{rtc.remoteStreams.length}} </span>
+				</div> |
+				<div class="one">
+					<i class="fa fa-clock-o"></i> Duration(s):
+					<span> {{rtc.remoteStreams.Controls.Duration}}</span>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="right">
+			<h4 class="h4">
+				Broadcast Controls
+				<span></span>
+			</h4>
+			<button class="btnStart" ng-click="localStream.toggleCam()">
+				<i class="fa fa-play"></i> Start Broadcast</button>
+			<button class="btnPause">
+				<i class="fa fa-pause"></i> Pause Broadcast</button>
+			<button class="btnStop" ng-click="localStream.toggleCam()">
+				<i class="fa fa-stop"></i> Stop Broadcast</button>
+			<br />
+			<h4 class="h4">
+				Viewer URL here
+				<span></span>
+			</h4>
+			<div class="urlCopy">
+				<input type="text" value={{localStream.link}} id="Input1" />
+				<button class="btncopy" onclick="copyText1()">Copy</button>
+				<button class="btnrefresh" ng-click="rtc.loadData()">
+					<i class="fa fa-refresh"></i>
+				</button>
+				<div class="clearfix"></div>
+			</div>
+			<br />
+			<br />
+			<h4 class="h4">
+				Presenter URL here
+				<span></span>
+			</h4>
+			<div class="urlCopy">
+				<input type="text" value={{localStream.link}} id="Input2" />
+				<button class="btncopy" onclick="copyText2()">Copy</button>
+				<button class="btnrefresh" ng-click="rtc.loadData()">
+					<i class="fa fa-refresh"></i>
+				</button>
+				<div class="clearfix"></div>
+			</div>
+			<div class="btnGroup">
+				<form action="/" method="get">
+					<button class="btnexit" ng-click="localStream.toggleCam()">Exit</button>
+				</form>
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="clearfix"></div>
+</div>

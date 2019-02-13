@@ -1,0 +1,483 @@
+body {
+  /*padding: 30px;*/
+    padding:10px 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00b7ff;
+  text-decoration: none;
+}
+
+table, tr, td, th {margin: 0;border: 0;padding: 5px;border-collapse: collapse;}
+
+li {
+    list-style-type: none;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 3px 3px 3px #888;
+    padding: 5px 5px 5px 5px;
+}
+
+li:hover {
+  cursor: pointer;
+  background-color: #aaa;
+}
+
+.localStream {
+  display: inline-block;
+  top: 15px;
+  right: 15px;
+  float: right;
+}
+
+.localStream video {
+    border: 5px solid rgb(119, 119, 119);
+    outline: 0px none;
+    height: 240px;
+    width: 320px;
+}
+
+.remoteStreams{
+  display: inline-block;
+  top: 15px;
+  right: 15px;
+  float: left;
+  text-align: center;
+}
+
+.remoteStreams td:hover {
+  cursor: pointer;
+  background-color: #aaa;
+}
+
+.remoteStreams .selected {
+  background-color: #444 !important;
+  text-shadow:none;
+  border-right-color: #aaa;
+  border-left: none;
+  border-radius: 3px 3px 3px 3px; 
+  box-shadow:inset 1px 2px 6px #070707;
+}
+
+.footer {
+   clear: both;
+}
+
+/** Rajesh Work **/
+.webcamWrap{
+	margin:0px;
+	padding:0px;
+	display:block;
+	width:100%;
+	position:relative;
+}
+.webcamWrap .text-center{
+	margin:0px 0px 10px 0px;
+	padding:0px;
+	width:100%;
+	text-align:center;
+}
+.onlineStatus{
+	margin:0px;
+	padding:0px;
+	display:block;
+	width:100%;	
+}
+.onlineStatus .span-dot{
+	margin:0px;
+	padding:0px;
+	display:inline-block;
+	width:12px;
+	height:12px;
+	border-radius:40%;
+	background:yellow;
+	cursor:pointer;
+}
+.onlineStatus .span-dot:hover, .onlineStatus .span-dot.active{background:#6be67d;}
+.onlineStatus .span-1{
+	margin:0px;
+	padding:0px;
+	display:inline-block;
+	font-size:14px;
+	font-weight:bold;
+	color:#111111;
+	font-family: 'Montserrat', sans-serif;
+}
+.onlineStatus .span-2{
+	margin:0px;
+	padding:0px;
+	display:inline-block;
+	font-size:14px;
+	font-weight:normal;
+	color:#999999;
+	font-family: 'Montserrat', sans-serif;
+}
+.videoWrap{
+	margin:20px 0px;
+	padding:0px;
+	display:block;
+	width:100%;	
+	position:relative;
+}
+.videoWrap .left{
+	margin:0px 1% 0px 0px;
+	padding:0px;
+	display:block;
+	float:left;
+	width:71%;	
+	
+	position:relative;	
+}
+.videoWrap .left .img-1{
+	margin:0px 1% 0px 0px;
+	padding:0px;
+	width:49.5%;		
+	height:508px;
+	float:left;
+	position:relative;
+	overflow:hidden;
+	background-color: #333333;
+}
+.video-leftArrow{
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #000;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+	cursor:pointer;
+}
+.videoWrap .left .img-1 .video-leftArrow img{ max-width:100%; height:auto;}
+
+.videoWrap .left .img-2{
+	margin:0px;
+	padding:0px;
+	width:49.5%;		
+	height:508px;
+	float:left;
+	position:relative;
+	overflow:hidden;
+}
+.video-leftArrow-1{
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #000;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+	cursor:pointer;
+}
+.video-leftArrow-1{ right: 0;  left: initial;}
+.video-leftArrow-1 img{ max-width:100%; height:auto;}
+.videoWrap .left .img-2 .video-leftArrow img{ max-width:100%; height:auto;}
+.videoWrap .left .img-1 img, .videoWrap .left .img-2 img{ max-width:100%; height:100%;}
+.videoWrap .left .img-2 .video-leftArrow-1 img{ max-width:100%; height:auto;}
+
+.videoWrap .right{
+	margin:0px;
+	padding:15px;
+	display:block;
+	float:left;
+	width:25%;	
+	position:relative;	
+	background:#4c4c4c;
+	color:#fff;
+	font-family: 'Montserrat', sans-serif;
+}
+.h4{
+	margin:0px;
+	padding:0px;
+	display:block;
+	width:100%;	
+	text-align:center;
+	font-size:16px;
+	font-weight:normal;
+}
+.h4 span{
+	margin:10px auto 20px auto;
+	padding:0px;
+	display:block;
+	width:40px;
+	height:1px;
+	background:#09c4c6;
+}
+.btnStart, .btnPause, .btnStop{
+	margin:0px auto 10px auto;
+	padding:0px;
+	display:block;
+	width:80%;
+	height:40px;
+	background:#09c4c6;
+	color:#fff;
+	font-size:15px;
+	border:0px;
+	border-radius:4px;
+	font-family: 'Montserrat', sans-serif;
+	cursor:pointer;
+	text-transform:uppercase;
+}
+.btnStart i, .btnPause i, .btnStop i{ margin-right:5px;}
+.urlCopy{
+	margin:0px;
+	padding:0px;
+	width:100%;
+	position:relative;
+}
+.urlCopy input{
+	margin:0px;
+	padding:0px;
+	width:100%;
+	position:relative;
+	height:36px;
+	border:0px;
+	border-bottom:1px solid #09c4c6;
+	background:transparent;
+	color:#ffffff;
+	font-size:12px;
+	font-family: 'Montserrat', sans-serif;
+}
+.urlCopy .btncopy{
+	margin: 0px;
+	padding: 0px;
+	width: 58px;
+	position: absolute;
+	top: 3px;
+	right: 42px;
+	cursor: pointer;
+	height: 33px;
+	border: 0px;
+	background: #09c4c6;
+	color: #fff;
+	font-size: 12px;
+	font-family: 'Montserrat', sans-serif;
+}
+.urlCopy .btnrefresh{
+	margin:0px;
+	padding:0px;
+	width:40px;
+	position:absolute;
+	top:3px;
+	right:0px;
+	cursor:pointer;
+	height:33px;
+	border:0px;
+	background:#09c4c6;
+	color:#fff;
+	font-size:20px;
+	font-family: 'Montserrat', sans-serif;
+}
+.btnexit{
+	margin:10px auto 0px auto;
+	padding:0px;
+	display:block;
+	width:40%;
+	height:40px;
+	background:#d15a5a;
+	color:#cccccc;
+	font-size:20px;
+	font-weight:bold;
+	border:0px;
+	border-radius:4px;
+	font-family: 'Montserrat', sans-serif;
+	cursor:pointer;
+	text-transform:uppercase;	
+}
+
+.leftViewer{
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+	width:100%;
+	text-align:center;
+}
+.leftViewer .one{
+	margin:20px 10px 0px 10px;
+	padding:0px;
+	display:inline-block;
+	color:#333;
+	font-size:16px;
+	font-weight:100;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.leftScreenButton{
+	margin:0px;
+	padding:0px;
+	width:100%;
+	position: absolute;
+	top: 48px;
+	left: 6px;
+	display:none;
+}
+.leftScreenButton.rightPanel{
+    position: absolute;
+    top: 48px;
+    left: initial;
+    right: 0;
+    width: 48%;
+}
+.leftScreenButton p{
+	margin:0px 0px 4px 10px;
+	padding:0px;
+	display:block;
+	color:#fff;
+	font-size:16px;
+	font-weight:100;
+	font-family: 'Montserrat', sans-serif;	
+}
+
+.leftScreenButton .box-check{
+	margin:0px 0px 2px 0px;
+	padding:6px;
+	width:180px;
+	font-size:12px;
+	background:#09c4c6;
+	height:28px;
+	color:#fff;
+	font-weight:100;
+	font-family: 'Montserrat', sans-serif;	
+	border-radius:4px;
+	text-transform:uppercase;
+}
+.leftScreenButton .box-check.last{ line-height:28px;}
+
+/* The camcheck */
+.camcheck {
+  display: block;
+  position: relative;
+  padding-top: 5px;
+  padding-left: 35px;
+  margin-bottom: 7px;
+  cursor: pointer;
+  font-size: 12px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.camcheck input {position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0;} 
+/* Create a custom checkbox */
+.checkmark {position:absolute; top:0; left:0; height:20px; width:20px; background-color:transparent; border-radius:2px;}
+.camcheck:hover input ~ .checkmark { background-color: #ccc;}
+.camcheck input:checked ~ .checkmark { background-color: transparent;  border:1px solid #fff;}
+.checkmark:after {content: ""; position: absolute; display: none;}
+.camcheck input:checked ~ .checkmark:after { display: block;} 
+
+.camcheck .checkmark:after {
+	left: 7px;
+	top: 2px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.btnGroup{
+	margin:0px;
+	padding:0px;
+	width:100%;
+	display:block;
+}
+.btncall{
+	margin:0px;
+	padding:0px;
+	width:100%;
+	display:block;
+	font-size:60px;
+	color:#fff;
+	background:transparent;
+	border:0px;
+	cursor:pointer;
+	position:absolute;
+	top:220px;
+	left:0px;
+}
+
+.videoWrap .left .img-2 {
+    margin: 0px;
+    padding: 0px;
+    width: 49.5%;
+    height: 508px;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+video{
+	height:508px;
+	width:auto;
+	border: 1px solid #09c4c6;
+	/* height:508px;
+	width:551px; */
+	/* min-width: 100%;
+	min-height: 100%; */
+	/* object-fit: cover; */
+	/* object-fit: fill; */
+}
+/* .videoContainer
+{
+   position:absolute;
+   height:100%;
+   width:100%;
+    overflow: hidden;
+}
+
+.videoContainer video
+{
+  min-width: 100%;
+  min-height: 100%;
+} */
+
+.startName{
+	margin:0px;
+	padding:0px;
+	width:100%;
+	position:relative;
+}
+.startName input{
+	margin:0px;
+	padding:0px;
+	width:100%;
+	position:relative;
+	height:36px;
+	border:0px;
+	border-bottom:1px solid #09c4c6;
+	background:transparent;
+	color:#333333;
+	font-size:12px;
+	font-family: 'Montserrat', sans-serif;
+}
+.startName .btncopy{
+	margin: 0px;
+	padding: 0px;
+	width: 58px;
+	position: absolute;
+	top: 3px;
+	right: 42px;
+	cursor: pointer;
+	height: 33px;
+	border: 0px;
+	background: #09c4c6;
+	color: #fff;
+	font-size: 12px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+/** Rajesh Work **/
+
