@@ -1,3 +1,8 @@
+// var jquery = require('jquery');
+// const jsdom = require("jsdom");
+// const { JSDOM } = jsdom;
+// const { window } = new JSDOM(`<!DOCTYPE html>`);
+// const $ = require('jQuery')(window);
 var express = require('express')
   , path = require('path')
   , streams = require('./app/streams.js')();
@@ -8,11 +13,6 @@ var favicon = require('serve-favicon')
   , bodyParser = require('body-parser')
   , errorHandler = require('errorhandler');
 
-var jquery = require('jquery');
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
-const { window } = new JSDOM(`<!DOCTYPE html>`);
-const $ = require('jQuery')(window);
 var app = express();
 // all environments
 app.set('port', process.env.PORT || 3000);
