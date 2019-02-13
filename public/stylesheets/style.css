@@ -1,6 +1,5 @@
 body {
-  /*padding: 30px;*/
-    padding:10px 0;
+  padding:10px 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -65,7 +64,6 @@ li:hover {
    clear: both;
 }
 
-/** Rajesh Work **/
 .webcamWrap{
 	margin:0px;
 	padding:0px;
@@ -423,26 +421,8 @@ video{
 	height:508px;
 	width:auto;
 	border: 1px solid #09c4c6;
-	/* height:508px;
-	width:551px; */
-	/* min-width: 100%;
-	min-height: 100%; */
-	/* object-fit: cover; */
-	/* object-fit: fill; */
-}
-/* .videoContainer
-{
-   position:absolute;
-   height:100%;
-   width:100%;
-    overflow: hidden;
-}
 
-.videoContainer video
-{
-  min-width: 100%;
-  min-height: 100%;
-} */
+}
 
 .startName{
 	margin:0px;
@@ -478,6 +458,3 @@ video{
 	font-size: 12px;
 	font-family: 'Montserrat', sans-serif;
 }
-
-/** Rajesh Work **/
-
