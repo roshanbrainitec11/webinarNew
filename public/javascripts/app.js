@@ -10,11 +10,9 @@
 			optional: []
 		}
 	};
-
 	app.factory('camera', [ '$rootScope', '$window', function ($rootScope, $window) {
 		var camera = {};
 		camera.preview = $window.document.getElementById('localVideo');
-
 		camera.start = function () {
 			return requestUserMedia(mediaConfig)
 				.then(function (stream) {
@@ -120,7 +118,6 @@
 		localStream.name = 'Guest';
 		localStream.link = '';
 		localStream.cameraIsOn = false;
-
 		$scope.$on('cameraIsOn', function (event, data) {
 			$scope.$apply(function () {
 				localStream.cameraIsOn = data;
@@ -140,7 +137,7 @@
 			} else {
 				camera.start()
 					.then(function (result) {
-						localStream.link = $window.location.host + '/' + client.getId();
+						localStream.link = 'https://' + $window.location.host + '/' + client.getId();
 						client.send('readyToStream', { name: localStream.name });
 					})
 					.catch(function (err) {
@@ -149,4 +146,5 @@
 			}
 		};
 	} ]);
+
 })();

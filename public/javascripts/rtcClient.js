@@ -109,7 +109,6 @@ var PeerManager = (function () {
   }
   function send (type, to, payload) {
     console.log('sending ' + type + ' to ' + to);
-
     socket.emit('message', {
       to: to,
       type: type,
@@ -131,7 +130,6 @@ var PeerManager = (function () {
     },
 
     setLocalStream: function (stream) {
-
       // if local cam has been stopped, remove it from all outgoing streams.
       if (!stream) {
         for (id in peerDatabase) {
