@@ -24,8 +24,12 @@
 				.catch(Error('Failed to get access to local media.'));
 		};
 		camera.stop = function () {
+
 			return new Promise(function (resolve, reject) {
 				try {
+					camera.MediaStreamTrack.stop();
+					//camera.stream.getTracks();
+					// camera.stream.getTracks()[ 0 ].stop()
 					//camera.stream.stop() no longer works
 					for (var track in camera.stream.getTracks()) {
 						track.stop();

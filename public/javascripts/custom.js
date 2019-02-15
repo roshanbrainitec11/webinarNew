@@ -20,3 +20,11 @@ function copyText2 () {
     copyText.select();
     document.execCommand("copy");
 }
+
+var vid = document.getElementById("localVideo");
+function playVid () {
+    vid.play();
+}
+function pauseVid () {
+    vid.pause();
+}

@@ -53,28 +53,6 @@
 			</div>
 			<div class="img-2" ng-controller="RemoteStreamsController as rtc">
 				<div id="remoteVideosContainer"></div>
-				<!-- <table>
-					<thead>
-						<tr>
-							<th>Live User</th>
-							<th>User </th>
-							<th>Options</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr ng-repeat="stream in rtc.remoteStreams" ng-class="{'selected' : stream.isPlaying}">
-							<td>
-								<a>{{stream.name}}</a>
-							</td>
-							<td ng-click="rtc.view(stream)">
-								<a>View</a>
-							</td>
-							<td ng-click="rtc.call(stream)">
-								<a>Call</a>
-							</td>
-						</tr>
-					</tbody>
-				</table> -->
 				<button class="btncall">
 					<i class="fa fa-video-camera"></i>
 				</button>
@@ -133,13 +111,15 @@
 				Broadcast Controls
 				<span></span>
 			</h4>
-			<button class="btnStart" ng-click="localStream.toggleCam()">
+			<button class="btnStart" onclick="playVid()">
 				<i class="fa fa-play"></i> Start Broadcast</button>
-			<button class="btnPause">
+			<button class="btnPause" onclick="pauseVid()">
 				<i class="fa fa-pause"></i> Pause Broadcast</button>
-			<button class="btnStop" ng-click="localStream.toggleCam()">
-				<i class="fa fa-stop"></i> Stop Broadcast</button>
-			<br />
+			<form action="/" method="get">
+				<button class="btnStop">
+					<i class="fa fa-stop"></i> Stop Broadcast</button>
+			</form>
+
 			<h4 class="h4">
 				Viewer URL here
 				<span></span>
@@ -152,7 +132,7 @@
 				</button>
 				<div class="clearfix"></div>
 			</div>
-			<br />
+
 			<br />
 			<h4 class="h4">
 				Presenter URL here

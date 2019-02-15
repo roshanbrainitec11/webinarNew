@@ -18,7 +18,7 @@ li {
     box-shadow: 3px 3px 3px #888;
     padding: 5px 5px 5px 5px;
 }
-
+input:focus{ outline:0px;}
 li:hover {
   cursor: pointer;
   background-color: #aaa;
@@ -113,7 +113,7 @@ li:hover {
 	font-family: 'Montserrat', sans-serif;
 }
 .videoWrap{
-	margin:20px 0px;
+	margin:20px 0px 0px 0px;
 	padding:0px;
 	display:block;
 	width:100%;	
@@ -132,7 +132,7 @@ li:hover {
 	margin:0px 1% 0px 0px;
 	padding:0px;
 	width:49.5%;		
-	height:508px;
+	height:472px;
 	float:left;
 	position:relative;
 	overflow:hidden;
@@ -302,7 +302,7 @@ li:hover {
 	text-align:center;
 }
 .leftViewer .one{
-	margin:20px 10px 0px 10px;
+	margin:10px 10px 0px 10px;
 	padding:0px;
 	display:inline-block;
 	color:#333;
@@ -410,7 +410,7 @@ li:hover {
     margin: 0px;
     padding: 0px;
     width: 49.5%;
-    height: 508px;
+    height: 472px;
     float: left;
     position: relative;
     overflow: hidden;
@@ -449,7 +449,7 @@ video{
 	width: 58px;
 	position: absolute;
 	top: 3px;
-	right: 42px;
+	right: 0px;
 	cursor: pointer;
 	height: 33px;
 	border: 0px;
@@ -458,3 +458,24 @@ video{
 	font-size: 12px;
 	font-family: 'Montserrat', sans-serif;
 }
+.clearfix{ margin:0px; padding:0px; width:100%; clear:both;}
+/** Medaia Query **/
+@media only screen and (max-width: 992px) {
+.videoWrap .left{ width:100%; margin:0px; display: block; }	
+.videoWrap .right{
+	display: block;
+	float: inline-start;
+	width: 96%;
+	margin: 10px auto 0 auto;
+}
+	
+	
+
+}
+
+@media only screen and (max-width: 768px) {
+.videoWrap .left .img-1{width: 100%; float:none;}	
+.videoWrap .left .img-2{width: 100%; float:none; margin-top:5px;}	
+}
+
+/** Medaia Query **/
