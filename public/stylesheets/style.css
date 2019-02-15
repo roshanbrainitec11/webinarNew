@@ -325,10 +325,10 @@ li:hover {
     top: 48px;
     left: initial;
     right: 0;
-    width: 48%;
+    width: 60%;
 }
 .leftScreenButton p{
-	margin:0px 0px 4px 10px;
+	margin:0px 0px 4px 2px;
 	padding:0px;
 	display:block;
 	color:#fff;
@@ -350,7 +350,9 @@ li:hover {
 	border-radius:4px;
 	text-transform:uppercase;
 }
-.leftScreenButton .box-check.last{ line-height:28px;}
+.leftScreenButton .box-check.last{ line-height:28px;
+	text-align: center;
+    cursor: pointer;}
 
 /* The camcheck */
 .camcheck {
@@ -368,18 +370,18 @@ li:hover {
 }
 .camcheck input {position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0;} 
 /* Create a custom checkbox */
-.checkmark {position:absolute; top:0; left:0; height:20px; width:20px; background-color:transparent; border-radius:2px;}
-.camcheck:hover input ~ .checkmark { background-color: #ccc;}
+.checkmark {position:absolute; top:0; left:0; height:20px; width:20px; background-color:transparent; border-radius:2px; border:1px solid #fff;}
+.camcheck:hover input ~ .checkmark {  border:1px solid #fff;}
 .camcheck input:checked ~ .checkmark { background-color: transparent;  border:1px solid #fff;}
-.checkmark:after {content: ""; position: absolute; display: none;}
-.camcheck input:checked ~ .checkmark:after { display: block;} 
+.checkmark:after {content: ""; position: absolute; display: none; }
+.camcheck input:checked ~ .checkmark:after { display: block; } 
 
 .camcheck .checkmark:after {
 	left: 7px;
 	top: 2px;
 	width: 5px;
 	height: 10px;
-	border: solid white;
+	border:1px solid white;
 	border-width: 0 3px 3px 0;
 	-webkit-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
@@ -458,23 +460,86 @@ video{
 	font-family: 'Montserrat', sans-serif;
 }
 .clearfix{ margin:0px; padding:0px; width:100%; clear:both;}
+
+.tbl{}
+.tbl thead{}
+.tbl thead tr{}
+.tbl thead tr th{ color:#fff; font-weight:normal; cursor:pointer;}
+
+.liveOption{
+	margin:0px;
+	padding:0px;
+	width:100%;
+	display:block;
+}
+.liveOption .left{
+	margin:0px;
+	padding:0px;
+	width:50%;
+	display:block;
+	float:left;
+}
+.liveOption .left .box-check.last{ width:90%;}
+.liveOption .left h2{
+	margin:5px 0px 5px 0px;
+	padding:0px;
+	width:100%;
+	display:block;
+	font-size:14px;
+	font-weight:normal;
+	color:#fff;
+	font-family: 'Montserrat', sans-serif;
+}
+.liveOption .right{
+	margin:0px;
+	padding:0px;
+	width:50%;
+	display:block;
+	float:left;
+	background:transparent;
+}
+.liveOption .right h2{
+	margin:5px 0px 5px 0px;
+	padding:0px;
+	width:100%;
+	display:block;
+	font-size:14px;
+	font-weight:normal;
+	color:#fff;
+	font-family: 'Montserrat', sans-serif;
+}
+.liveOption .right .optionsRight { width:100%;}
+.liveOption .right .optionsRight .box-check.last{ 
+	width:38%; 
+	float:left; 
+	text-align:center; 
+	margin-left:2px; 
+	margin-right:2px;
+	cursor: pointer;
+}
+
+.btnrefresh {
+    margin: 0px;
+    padding: 0px;
+    width: 40px;
+    position: absolute;
+    top: 25px;
+    right: 38px;
+    cursor: pointer;
+    height: 33px;
+    border: 0px;
+    background: #09c4c6;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
 /** Medaia Query **/
 @media only screen and (max-width: 992px) {
 .videoWrap .left{ width:100%; margin:0px; display: block; }	
-.videoWrap .right{
-	display: block;
-	float: inline-start;
-	width: 96%;
-	margin: 10px auto 0 auto;
+.videoWrap .right{display: block; float: inline-start; width: 96%; margin: 10px auto 0 auto;} 
 }
-	
-	
-
-}
-
 @media only screen and (max-width: 768px) {
 .videoWrap .left .img-1{width: 100%; float:none;}	
 .videoWrap .left .img-2{width: 100%; float:none; margin-top:5px;}	
 }
-
 /** Medaia Query **/

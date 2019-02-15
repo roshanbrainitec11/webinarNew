@@ -27,8 +27,8 @@
 
 			return new Promise(function (resolve, reject) {
 				try {
-
-					// camera.stream.getTracks()[ 0 ].stop()
+					//camera.stream.getTracks()[ 0 ].stop();
+					//camera.media.stream.pause();
 					//camera.stream.stop() no longer works
 					for (var track in camera.stream.getTracks()) {
 						track.stop();
@@ -108,7 +108,6 @@
 					});
 			}
 		};
-
 		//initial load
 		rtc.loadData();
 		if ($location.url() != '/') {
