@@ -2,7 +2,7 @@
 	<h1 class="text-center"> [Presenter] Webinar
 		<div class="startName">
 			<input type="text" ng-model="localStream.name" />
-			<button class="btncopy" ng-click="localStream.toggleCam()">Start</button>
+			<button class="btncopy" ng-click="localStream.toggleCam()" ng-hide="localStream.cameraIsOn">Start</button>
 			<div class="clearfix"></div>
 		</div>
 	</h1>
